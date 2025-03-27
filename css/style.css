@@ -1,0 +1,157 @@
+body { 
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu de navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    padding: 14px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Container dos métodos de pagamento */
+.Metodos {
+    display: flex;
+    justify-content: center; /* Centraliza os métodos de pagamento */
+    align-items: center; /* Alinha verticalmente */
+    gap: 50px; /* Espaçamento entre os métodos */
+    flex-wrap: wrap; /* Permite quebra em telas menores */
+    margin-top: 50px;
+}
+
+/* Imagens */
+.Metodos img {
+    width: 200px; /* Redimensiona as imagens */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Botões */
+.Metodos .pagamento {
+    text-align: center; /* Centraliza os botões */
+}
+
+.Metodos button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Metodos button:hover {
+    background-color: #4CAF50;
+}
+.caixa {
+    display: none; /* Escondida por padrão */
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Oculta o checkbox */
+#toggle {
+    display: none;
+}
+
+/* Estiliza o botão */
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2670bf;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Caixa oculta por padrão */
+.caixa {
+    display: none;
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Quando o checkbox está marcado, mostra a caixa */
+#toggle:checked ~ .caixa {
+    display: block;
+}
+
+.caixa label {
+    display: block;
+    margin-top: 10px;
+}
+
+.caixa input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.caixa button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #25cf4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.caixa button:hover {
+    background-color: #218838;
+}
+.resultado{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 1000;
+}
