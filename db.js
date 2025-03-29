@@ -1,8 +1,10 @@
+const mysql = require('mysql2'); // Importando corretamente a biblioteca
+
 const connection = mysql.createConnection({
     host: 'localhost', // Ou o IP do seu servidor MySQL
-    user: 'host',
-    password: '3042',
-    database: 'Os Bravos'
+    user: 'root', // Correção do nome do usuário
+    password: '1234',
+    database: 'projeto' 
 });
 
 connection.connect((err) => {

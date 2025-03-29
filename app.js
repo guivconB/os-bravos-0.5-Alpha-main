@@ -1,10 +1,3 @@
-const express = require('express');
-
-const app = express();
-
-app.listen(8080);
-
-
 const pixButton = document.getElementById('meuBotao');
 const formContainer = document.getElementById('minhaCaixa');
 const form = formContainer.querySelector('form');
@@ -34,7 +27,7 @@ function gerarBoletoFicticio(nome, cpf, email, telefone) {
 }
     
 function exibirResultado(qrCode, boleto) {
-    // mo vontade de beber veneno, hum que dlç :D
+    // Cria um elemento div para exibir o resultado
     const resultadoDiv = document.createElement('div');
     resultadoDiv.style.position = 'fixed';
     resultadoDiv.style.top = '50%';
@@ -55,30 +48,11 @@ function exibirResultado(qrCode, boleto) {
         
     document.body.appendChild(resultadoDiv);
         
-    // NEM ASSIM AAAAAAAAAAAAAH! ok fds
+    // Adiciona evento de clique ao botão "Fechar"
     document.getElementById('fecharResultado').addEventListener('click', function() {
         document.body.removeChild(resultadoDiv);
     });
 }
-
-// 3. Importar módulo mysql
-const mysql = require('MySQL2');
-
-//3.1 Conexão com o banco de dados
-const conexao = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password :'3042',
-    database:'projeto'
-});
-
-//3.2 Teste de Conexão com o banco de dados
-conexao.connect(function(erro){
-    if(erro) throw erro;
-    console.log('Conectou com sucesso!');
-});
-
-const db = require('./db');
 
 // Teste de consulta
 db.query('SELECT 1 + 1 AS result', (err, results) => {
@@ -88,3 +62,7 @@ db.query('SELECT 1 + 1 AS result', (err, results) => {
     }
     console.log('Resultado da consulta:', results[0].result);
 });
+
+
+
+
