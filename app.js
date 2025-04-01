@@ -2,19 +2,19 @@ const pixButton = document.getElementById('meuBotao');
 const formContainer = document.getElementById('minhaCaixa');
 const form = formContainer.querySelector('form');
     
-function naoSeiQueNomeColocar() {
+function naoSeiQueNomeColocar(event) {
     event.preventDefault();
-        
+
     const nome = document.getElementById('nome').value;
     const cpf = document.getElementById('cpf').value;
     const email = document.getElementById('email').value;
     const telefone = document.getElementById('telefone').value;
-        
+
     const qrCode = gerarQRCodeFicticio(nome, cpf, email, telefone);
     const boleto = gerarBoletoFicticio(nome, cpf, email, telefone);
-        
+
     exibirResultado(qrCode, boleto);
-        
+
     formContainer.style.display = 'none';
 }
     
@@ -62,6 +62,24 @@ db.query('SELECT 1 + 1 AS result', (err, results) => {
     }
     console.log('Resultado da consulta:', results[0].result);
 });
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+//4.2 Rota principal
+app.get('/', function(req, res){
+    res.render('index', {title: 'Home'});
+});
+
+
+//7.Rota de Cadastro
+app.post('/Enviar', function(req, res){
+    console.log(req.body);
+    console.log(); //11.Nome do arquivo
+
+    //12. Upload do arquivo
+    
+    });
 
 
 
